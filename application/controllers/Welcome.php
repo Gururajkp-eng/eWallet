@@ -45,7 +45,7 @@ class Welcome extends CI_Controller {
 	}
 	public function signup(){
 
-		$email=$this->input->post('email');
+		$emails=$this->input->post('email');
 		$username=$this->input->post('emailORusername');
 		$password=$this->input->post('password');
 		$hashedPassword=$this->hash($password);
