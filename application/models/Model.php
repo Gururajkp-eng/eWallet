@@ -55,7 +55,7 @@ class Model extends CI_Model {
 				'sent_date_time'=>$datetime,
 				'existing_amount'=>$existingData['amount']
 			);
-			
+			$rr = "adsasdasdsadsadsadsadsad";
 		 $this->db->insert('transactions',$transData);
 		$existingAmountOfSender = $this->db->select('amount')->from('user_wallet')->where('user_id',$_SESSION['user_id'])->get()->row();
 		
