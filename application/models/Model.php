@@ -34,13 +34,15 @@ class Model extends CI_Model {
 	    	$existingAmtOfSender = $query->row()->amount;
 	    	$updateReceiverWallet = $transferData['amount'] + $query->row()->amount;
 	    	$transferData['amount'] = $updateReceiverWallet;
-	      	$addTranferedData =  $this->db->where('user_id', $user_id)->update('user_wallet', $transferData);
+	      $addTranferedData =  $this->db->where('user_id', $user_id)->update('user_wallet', $transferData);
 
 	    }
 	    else
 	    {
 	       $addTranferedData = $this->db->insert('user_wallet',$transferData);
 	    }
+
+
 
 		if($addTranferedData){
 			$res = $this->db->where('user_id',$_SESSION['user_id'])->update('user_wallet',$existingData);
@@ -55,7 +57,7 @@ class Model extends CI_Model {
 				'sent_date_time'=>$datetime,
 				'existing_amount'=>$existingData['amount']
 			);
-			$rr = "adsasdasdsadsadsadsadsad";
+			
 		 $this->db->insert('transactions',$transData);
 		$existingAmountOfSender = $this->db->select('amount')->from('user_wallet')->where('user_id',$_SESSION['user_id'])->get()->row();
 		
