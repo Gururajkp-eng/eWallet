@@ -178,6 +178,7 @@ public function history()
 		$data['products'] = $this->Model->getAllProducts();
 		$this->load->view('products/product',$data);
 		}else{
+			status_code(400);
 			redirect('/');
 		}
 			
