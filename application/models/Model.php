@@ -53,7 +53,7 @@ class Model extends CI_Model {
 				'receiver_id'=>$user_id,
 				'sent_amt' => $transfer_amt,
 				'sent_date_time'=>$datetime,
-				'existing_amount'=>$existingData['amount']..
+				'existing_amount'=>$existingData['amount']
 			);
 			
 		 $this->db->insert('transactions',$transData);
